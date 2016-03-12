@@ -1,0 +1,40 @@
+{
+  "name": "markov-chain-kuromoji",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "start": "node example/test.js",
+    "build": "babel src --out-dir lib",
+    "watch": "npm-watch"
+  },
+  "homepage": {
+    "url": "https://github.com/uraway/markov-chain-kuromoji"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/uraway/markov-chain-kuromoji.git"
+  },
+  "bugs": {
+    "url": "https://github.com/uraway/markov-chain-kuromoji/issues"
+  },
+  "author": "Masato Urai",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.5.1",
+    "babel-preset-es2015": "^6.5.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "npm-watch": "^0.1.1"
+  },
+  "watch": {
+    "build": {
+      "patterns": [
+        "src"
+      ],
+      "extensions": "js"
+    }
+  },
+  "dependencies": {
+    "kuromoji": "0.0.5"
+  }
+}
