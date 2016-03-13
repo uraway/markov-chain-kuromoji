@@ -7,6 +7,8 @@ class MarkovChain {
     this.result = null;
     this.dictionary = {};
     this.output = 'output';
+    this.dicPath = process.env.KUROMOJI_DIC_PATH || 'node_modules/kuromoji/dist/dict/';
+    this.tokenizer = null;
   }
 
   start(sentence, callback) {
@@ -14,11 +16,16 @@ class MarkovChain {
   }
 
   parse(sentence, callback) {
-    kuromoji.builder({ dicPath: 'node_modules/kuromoji/dist/dict/' }).build((err, tokenizer) => {
-      let path = tokenizer.tokenize(this.text);
-      this.dictionary = this.makeDic(path);
-      this.makeSentence(this.dictionary, sentence);
-      callback(this.output);
+    kuromoji.builder({ dicPath: this.dicPath }).build((err, _tokenizer) => {
+      this.tokenizer = _tokenizer;
+      if (err) {
+        console.log(err);
+      } else {
+        let path = this.tokenizer.tokenize(this.text);
+        this.dictionary = this.makeDic(path);
+        this.makeSentence(this.dictionary, sentence);
+        callback(this.output);
+      }
     });
   }
 

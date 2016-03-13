@@ -1,10 +1,10 @@
 {
   "name": "markov-chain-kuromoji",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
-    "start": "node example/test.js",
+    "start": "node example/index.js",
     "build": "babel src --out-dir lib",
     "watch": "npm-watch"
   },

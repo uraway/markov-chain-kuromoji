@@ -7,6 +7,11 @@ generates markov chain words powered by kuromoji.js
 npm install markov-chain-kuromoji
 ```
 
+## Dictionary path
+```
+process.env.KUROMOJI_DIC_PATH
+```
+
 ## Usage
 ```
 var fs = require('fs');
